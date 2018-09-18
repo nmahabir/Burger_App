@@ -8,10 +8,21 @@ var orm = {
       console.log(result);
     });
   },
-  insertOne: function(whatToInsert, table, orderCol) {
-    var queryString = "SELECT ?? FROM ?? ORDER BY ?? DESC";
+  insertOne: function(table, colToSearch, valOfCol) {
+    var queryString = "INSERT INTO ?? (??) VALUES (?)";
     console.log(queryString);
-    connection.query(queryString, [whatToSelect, table, orderCol], function(
+    connection.query(queryString, [table, colToSearch, valOfCol], function(
+      err,
+      result
+    ) {
+      if (err) throw err;
+      console.log(result);
+    });
+  },
+  updateOne: function(table, valToUpdate, colToSearch) {
+    var queryString = "UPDATE ?? SET devoured = ? WHERE type = ?";
+    console.log(queryString);
+    connection.query(queryString, [table, valToUpdate, colToSearch], function(
       err,
       result
     ) {
@@ -20,3 +31,5 @@ var orm = {
     });
   }
 };
+
+module.exports(orm);
