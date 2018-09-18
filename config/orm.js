@@ -1,5 +1,6 @@
 var connection = require("./connection.js");
-
+// Update ORM to include the call back functions
+// Remove the table option from ORM, we only have one table
 var orm = {
   selectAll: function(tableInput) {
     var queryString = "SELECT * FROM ?? ";
