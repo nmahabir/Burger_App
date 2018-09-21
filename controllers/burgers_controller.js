@@ -23,8 +23,12 @@ $("#add-burger").on("click", function(){
         data: $("#burger-input").val().trim(),
         url: "http://localhost:8080"
     })
+// on click of this button - will add to the table if it doesn't exist, 
+// and then move this burger option to the left of the side
 })
 
-
+$("#devour").on("click", function(){
+    // function to move the burger that was devoured to the right side.
+})
 
 module.exports(router);
