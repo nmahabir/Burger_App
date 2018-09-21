@@ -1,0 +1,13 @@
+body {
+    background-color: bisque;
+}
+
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+#burger-img {
+    width: 200px;
+    height: 200px;
+  
+}

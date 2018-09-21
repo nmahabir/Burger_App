@@ -1,27 +1,32 @@
-<img src="../public/assets/img/burger.png" alt="Yummy Burger">
+<img id="burger-img" src="../public/assets/img/burger.png" alt="Yummy Burger">
 
 
 
 <h1>Eat Them Burgers!</h1>
 
 
-{{!-- <ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
+<ul>
+  {{#each all_burgers}}
+    {{#unless devoured}}
+      {{> all_burgers/all_burgers-block devoured=true}}
     {{/unless}}
   {{/each}}
 </ul>
 
-<h2>Cats that are sleepy!</h2>
+
+<form class="choose-devoured">
+  <button id="devour">Devour!</button>
+</form>
+
+<h2>Burgers Devoured</h2>
 
 <ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
+  {{#each all_burgers}}
+    {{#if devoured}}
+      {{> all_burgers/all_burgers-block devoured=false}}
     {{/if}}
   {{/each}}
-</ul> --}}
+</ul>
 
 
 <form class="enter-burger">
@@ -30,5 +35,6 @@
     <textarea class="form-control" id="burger-input" rows="3"></textarea>
   </div>
 
-  <button type="submit">Submit</button>
+  <button id="add-burger" type="submit">Submit</button>
 </form>
+

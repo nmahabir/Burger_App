@@ -4,8 +4,9 @@ var router = express.Router();
 
 var burger = require("../models/burger.js");
 
-router.get("/index", function(req, res) {
+router.get("/", function(req, res) {
     burger.selectAll(function(data) {
+        res.json(data)
 // code to generate the index sheet with text box
     })
 
@@ -16,7 +17,13 @@ router.get("/index", function(req, res) {
 // request to add burgers that have been devoured to go to the right side
 
 // ajax code for the submit button 
-
+$("#add-burger").on("click", function(){
+    $.ajax({
+        method: Post,
+        data: $("#burger-input").val().trim(),
+        url: "http://localhost:8080"
+    })
+})
 
 
 
